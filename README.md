@@ -6,7 +6,9 @@ better addon manager waterfox
 
 adds back buttons to sort your extensions !
 
-style from classic theme restorer 
+slim style from classic theme restorer 
+
+color coding: blue label = webextension addon ; green label = classic/legacy addon 
 
 removed all junk related to legacy extension warning 
 
