@@ -15,7 +15,7 @@
 }
  
  .addon-view[notification="warning"] {
-	 --view-highlight-color: transparent;
+	 --view-highlight-color: transparent !important;
 }
  
  .global-info-container {
@@ -273,13 +273,38 @@
   display: none;
 }
 
-
-	.addon.addon-view[active="false"]/*:not([selected])*/ { background-color: #FBFBFB !important; }
-	.addon.addon-view:nth-child(odd)/*:not([selected])*/ {
-	   background-color: #F2F2F2 !important;
-	}
 * {
 	-moz-transition: none !important;
 	-moz-animation: none !important;
 }
+
+.addon[legacy="false"] .name-container{
+  
+  color:   #3370A5;
+}
+
+.addon[legacy="true"] .name-container{
+  
+  color:   #3E8338;
+}
+
+.update-info-container {
+  background-color: #F04F61
+}
+
+.addon-view[active="false"]{
+  background-color: #e4e0e0;
+  
+}
+
+.addon[legacy="false"][active="false"]  .name-container{
+  color: #89B0D2;
+  
+}
+.addon[legacy="true"][active="false"]  .name-container{
+  color: #88B984;
+  
+}
+
+
 }
