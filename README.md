@@ -2,7 +2,7 @@
 better addon manager waterfox
 
 
-![GitHub Logo](screenshot.png)
+
 
 adds back buttons to sort your extensions !
 
