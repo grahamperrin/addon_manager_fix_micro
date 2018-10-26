@@ -12,4 +12,9 @@ color coding: blue label = webextension addon ; green label = classic/legacy add
 
 removed all junk related to legacy extension warning 
 
+
+added filter textbox, type to find 
+![GitHub Logo](screenshot2.png)
+
+
 base on https://github.com/srazzano/Addon_Manager_Fix
