@@ -4139,7 +4139,7 @@ var amfSort = {
 	header: "",
 	init: function () {
 		amfSort.header = document.getElementById("header");
-
+		//amfSort.header = document.getElementsByClassName("plugin-info-container")[0];
 		let butA = window.document.createElement("button");
 		butA.setAttribute("label", "Name");
 		butA.setAttribute("checked", "false");
@@ -4150,7 +4150,7 @@ var amfSort = {
 		amfSort.butA = butA;
 
 		let butB = window.document.createElement("button");
-		butB.setAttribute("label", "Update");
+		butB.setAttribute("label", "Last Updated");
 		butB.setAttribute("checked", "false");
 		butB.setAttribute("checkState", "2");
 		butB.setAttribute("id", "button-Update");
@@ -4163,13 +4163,42 @@ var amfSort = {
 		butC.setAttribute("label", "Split by Enabled");
 		butC.setAttribute("id", "button-Status");
 		butC.addEventListener("command", amfSort.triggerSplit, false);
+		butC.style.height = "10px";
 		amfSort.butC = butC;
 
+		let filterBox = window.document.createElement("textbox");
+		filterBox.setAttribute("id", "filterBox");
+		filterBox.setAttribute("type", "search");
+		filterBox.setAttribute("timeout", "500");
+		filterBox.addEventListener("command", amfSort.filterAddons, false);
+		filterBox.style.height = "10px";
+
+		filterBox.setAttribute("enablehistory", true);
+
+		amfSort.filterBox = filterBox;
+
+		/* 		var notifyListbox = "var evt = document.createEvent('Events'); "
+		+ "evt.initEvent('textentered', true, true); "
+		+ "this.dispatchEvent(evt);";
+		acAddonList.setAttribute("ontextentered", notifyListbox);
+		 */
+		amfSort.header.insertBefore(amfSort.filterBox, amfSort.header.firstChild);
 		amfSort.header.insertBefore(amfSort.butC, amfSort.header.firstChild);
-
-		amfSort.header.insertBefore(amfSort.butA, amfSort.header.firstChild);
 		amfSort.header.insertBefore(amfSort.butB, amfSort.header.firstChild);
+		amfSort.header.insertBefore(amfSort.butA, amfSort.header.firstChild);
 
+	},
+
+	filterAddons: function (e) {
+		let value = new RegExp(e.target.value, "ig");
+		let list = document.getElementById('addon-list').childNodes;
+		for (let xxx of list) {
+			if (xxx.getAttribute("name").match(value)) {
+				xxx.style.visibility = "initial";
+			} else {
+				xxx.style.visibility = "collapse";
+			}
+		}
 	},
 
 	getSortButtons: function () {
@@ -4211,6 +4240,7 @@ var amfSort = {
 			frag.appendChild(el);
 		});
 		list.appendChild(frag);
+		gViewController.updateState(window.history.state);
 	},
 	triggerSplit: function (e) {
 		e.target.style.backgroundColor = e.target.style.backgroundColor == "red" ? "" : "red";
@@ -4228,17 +4258,8 @@ var amfSort = {
 
 window.addEventListener("load", function (e) {
 	amfSort.init();
-	if (e.target.getAttribute("type") === "userstyle" || e.target.getAttribute("type") === "custombuttons" || e.target.getAttribute("type") === "greasemonkey-user-script" || e.target.getAttribute("id") === "search-view") {
-		amfSort.butA.style.display = "none";
-		amfSort.butB.style.display = "none";
-		amfSort.butC.style.display = "none";
-	} else {
-		amfSort.butA.style.display = "initial";
-		amfSort.butB.style.display = "initial";
-		amfSort.butC.style.display = "initial";
-	}
-
 	window.addEventListener('ViewChanged', function (e) {
+		console.log(e.target.getAttribute("type"));
 		if (e.target.getAttribute("type") === "userstyle" || e.target.getAttribute("type") === "custombuttons" || e.target.getAttribute("type") === "greasemonkey-user-script" || e.target.getAttribute("id") === "search-view") {
 			amfSort.butA.style.display = "none";
 			amfSort.butB.style.display = "none";
@@ -4247,8 +4268,16 @@ window.addEventListener("load", function (e) {
 			amfSort.butA.style.display = "initial";
 			amfSort.butB.style.display = "initial";
 			amfSort.butC.style.display = "initial";
-		}
 
+			let value = new RegExp(amfSort.filterBox.value, "ig");
+			let list = document.getElementById('addon-list').childNodes;
+			for (let xxx of list) {
+				if (xxx.getAttribute("name").match(value)) {
+					xxx.style.visibility = "initial";
+				} else {
+					xxx.style.visibility = "collapse";
+				}
+			}
+		}
 	}, false);
 }, false);
-//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
