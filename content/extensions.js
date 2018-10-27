@@ -4230,7 +4230,7 @@ var amfSort = {
 			frag.appendChild(el);
 		});
 		list.appendChild(frag);
-		//gViewController.updateState(window.history.state);   // FIX FOR  addosn compatibility reporter addon ..
+		gViewController.updateState(window.history.state);   // FIX FOR  addosn compatibility reporter addon ..
 	},
 	triggerSplit: function (e) {
 		e.target.style.backgroundColor = e.target.style.backgroundColor == "red" ? "" : "red";
