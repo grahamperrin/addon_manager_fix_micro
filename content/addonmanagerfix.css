@@ -314,6 +314,10 @@
 #button-Status > * {
   padding: 0
 }
+.addon-control.preferences{
+  
+  background-color: #C5B8A8;
+}
 /* 
 #header{
 	
