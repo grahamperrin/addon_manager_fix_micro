@@ -1,20 +1,21 @@
-# addon_manager_fix_micro
-better addon manager waterfox
+A fork of: 
 
-![GitHub Logo](screenshot.png)
+## Addon Manager Fix Micro
 
+Original documentation: 
 
-adds back buttons to sort your extensions !
+- https://github.com/Ulf3000/addon_manager_fix_micro#readme
 
-slim style from classic theme restorer 
+This fork is: 
 
-color coding: blue label = webextension addon ; green label = classic/legacy addon 
+- primarily for compatibility with editions of Mozilla's **Add-on Compatibility Reporter** – [forked by me](https://github.com/grahamperrin/e10s-compatibility-alerts) but not yet changed, intended to simply alert end users (not to report to Mozilla)
+- for me to experiment with changes to style – https://github.com/grahamperrin/addon_manager_fix_micro/tree/style
+- broadly envisaged to be one part of a two-extension bundle that might partially address [e10s, multi-process: Waterfox add-on compatibility reporting · Issue #401 · MrAlex94/Waterfox](https://github.com/MrAlex94/Waterfox/issues/401).
 
-removed all junk related to legacy extension warning 
+### Related
 
+Background (from [e10s (multi-process) compatibility reports at addons.mozilla.org (AMO)](https://gist.github.com/grahamperrin/12e03fe3d305901c093cb68bce43fe92)):
 
-added filter textbox, type to find 
-![GitHub Logo](screenshot2.png)
+> [Waterfox](https://www.waterfoxproject.org/) previously allowed an automated switch to single-process mode, in response to adding (or enabling) any extension that is incompatible with multi-process. This [automation ended with Waterfox 56.0.3](https://github.com/MrAlex94/Waterfox/commit/6e345976571abe1b99cddc2b718de1f50af5c4cb).
 
-
-base on https://github.com/srazzano/Addon_Manager_Fix
+– the absence of automation drove the wish for compatibility reporting ([issue 401](https://github.com/MrAlex94/Waterfox/issues/401)). 
