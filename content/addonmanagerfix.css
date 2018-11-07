@@ -289,7 +289,7 @@
 }
 
 .addon-view[active="true"]{
-  background-color: #dbffdb;
+  background-color: #e7ffe7;
 }
 
 .addon-view[active="false"]{
@@ -297,7 +297,7 @@
 }
 
 .addon-control.enable{
-	background-color: #dbffdb;
+	background-color: #e7ffe7;
 }
 
 .addon[legacy="false"][active="false"]  .name-container{
@@ -314,7 +314,6 @@
 
 #button-Status > * {
   padding: 0;
-	background-color: #ffffff;
 }
 .addon-control.preferences{
   

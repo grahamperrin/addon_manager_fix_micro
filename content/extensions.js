@@ -4157,7 +4157,7 @@ var amfSort = {
 		amfSort.butB = butB;
 
 		let butC = window.document.createElement("button");
-		butC.setAttribute("label", "Split by Enabled");
+		butC.setAttribute("label", "Enabled first");
 		butC.setAttribute("id", "button-Status");
 		butC.addEventListener("command", amfSort.triggerSplit, false);
 		butC.style.height = "10px";
@@ -4233,7 +4233,7 @@ var amfSort = {
 		gViewController.updateState(window.history.state);   // FIX FOR  addosn compatibility reporter addon ..
 	},
 	triggerSplit: function (e) {
-		e.target.style.backgroundColor = e.target.style.backgroundColor == "red" ? "" : "red";
+		e.target.style.backgroundColor = e.target.style.backgroundColor == "yellow" ? "" : "yellow";
 		sortUiState = sortUiState == true ? false : true;
 		if (sortUiState) {
 			sortState.push("uiState");
