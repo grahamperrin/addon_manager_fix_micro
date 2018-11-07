@@ -282,12 +282,12 @@
 
 .addon[legacy="false"] .name-container{
   
-  color:   #3370A5;
+  color:   #000000;
 }
 
 .addon[legacy="true"] .name-container{
   
-  color:   #3E8338;
+  color:   #aa0000;
 }
 
 .update-info-container {
@@ -295,16 +295,16 @@
 }
 
 .addon-view[active="false"]{
-  background-color: #e4e0e0;
-  
+  background-color: #000000;
+  color:   #aaffff;  
 }
 
 .addon[legacy="false"][active="false"]  .name-container{
-  color: #89B0D2;
+  color: #000000;
   
 }
 .addon[legacy="true"][active="false"]  .name-container{
-  color: #88B984;
+  color: #aa0000;
   
 }
 .global-warning-checkcompatibility{
@@ -316,7 +316,7 @@
 }
 .addon-control.preferences{
   
-  background-color: #C5B8A8;
+  background-color: #aaffff;
 }
 /* 
 #header{
